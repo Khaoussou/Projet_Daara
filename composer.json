@@ -1,0 +1,12 @@
+{
+    "name": "khaoussou/projet_daara",
+    "autoload": {
+        "psr-4": {
+            "Model\\":"model/",
+            "Controller\\":"controller/",
+            "Router\\":"router/",
+            "Vue\\":"vue/"
+        }
+    },
+    "require": {}
+}

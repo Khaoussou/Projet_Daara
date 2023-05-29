@@ -1,0 +1,37 @@
+<?php
+
+namespace Controller;
+
+class SessionController
+{
+    public function startSession()
+    {
+        if (session_status() === PHP_SESSION_DISABLED) {
+            session_start();
+        }
+    }
+    public function sessionUserExist()
+    {
+        if (!empty($_SESSION['id']) && !empty($_SESSION['login']) && !empty($_SESSION['password'])) {
+            return true;
+        }
+        return false;
+    }
+    public function destroySession()
+    {
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_destroy();
+            header("Location://htpp:localhost:8080/connect");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
