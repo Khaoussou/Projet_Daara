@@ -10,6 +10,8 @@ use Model\Model;
 
 use Model\AnneeModel;
 
+use Controller\SessionController;
+
 class Controller
 {
     private $database;
@@ -25,10 +27,6 @@ class Controller
     {
         require_once('../vue/connexion.html.php');
     }
-    // public function addlevel()
-    // {
-    //     require_once('../vue/addlevel.html.php');
-    // }
     public function formclasse()
     {
         require_once('../vue/addclasse.html.php');
@@ -41,9 +39,8 @@ class Controller
     {
         require_once('../vue/addstudent.html.php');
     }
-    public function update()
+    public function update($id)
     {
-        $id = $_GET['id'];
         $libs = $this->anModel->getYearById($id);
         require_once('../vue/updateyear.html.php');
     }
@@ -52,15 +49,18 @@ class Controller
         $numb = $_POST["numb"];
         $password = $_POST["password"];
         $autoriser = $_POST["autoriser"];
-        $error = "";
         if (isset($autoriser)) {
             if ($this->model->correctLogin($numb, $password)) {
-                $_SESSION["username"] = $numb ;
-                header("Location:http://localhost:8080/level");
-            }else {
-                header("Location:http://localhost:8080/connect");
+                $_SESSION["username"] = $numb;
+                header("Location:" . LINK . "niveau");
+            } else {
+                header("Location:" . LINK);
             }
         }
     }
-
+    public function disconnect()
+    {
+        SessionController::destroySession();
+        header("Location:" . LINK);
+    }
 }

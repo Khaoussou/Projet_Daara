@@ -12,7 +12,6 @@ class NiveauController
     {
         $this->niveauModel = new NiveauModel();
     }
-
     public function getLevel()
     {
         $results =  $this->niveauModel->all();
@@ -28,6 +27,6 @@ class NiveauController
                 "nomNiveau" => $nom
             ]);
         }
-        header("Location:http://localhost:8080/level");
+        header("Location:" . LINK . "level");
     }
 }

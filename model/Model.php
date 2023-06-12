@@ -20,4 +20,3 @@ class Model
         return true;
     }
 }
-

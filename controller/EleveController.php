@@ -40,52 +40,32 @@ class EleveController
     {
         $currentYear =  $this->anModel->getYearByStatus()[0]['idYear'];
         $this->eleveModel->insert([
-            "nom"=>$_POST["nom"],
-            "prenom"=>$_POST["prenom"],
-            "date"=>$_POST["date"],
-            "lieu"=>$_POST["lieu"],
-            "numero"=>$_POST["numero"],
-            "sexe"=>$_POST["sexe"],
-            "type"=>$_POST["type"],
-            "phone"=>$_POST["phone"],
-            "classe"=> $_SESSION['id']
+            "nom" => $_POST["nom"],
+            "prenom" => $_POST["prenom"],
+            "date" => $_POST["date"],
+            "lieu" => $_POST["lieu"],
+            "numero" => $_POST["numero"],
+            "sexe" => $_POST["sexe"],
+            "type" => $_POST["type"],
+            "phone" => $_POST["phone"],
+            "classe" => $_SESSION["id"]
         ]);
-        $curretstudent =  $this->eleveModel->getIdLastInsertStudent()[0]["LAST_INSERT_ID()"] ;
+        $curretstudent =  $this->eleveModel->getIdLastInsertid()[0]["LAST_INSERT_ID()"];
 
         $this->inscritModel->insertNewStudent([
-            "idYear"=> $currentYear,
-            "idClasse"=> $_SESSION['id'],
-            "idStudent"=> $curretstudent
+            "idYear" => $currentYear,
+            "idClasse" => $_SESSION["id"],
+            "idStudent" => $curretstudent
         ]);
-        
-        header("Location:http://localhost:8080/lister");
-        // echo '<pre>';
-        // echo $_SESSION['id'];
-        // echo '</pre>';
-        // var_dump($this->anModel->getYearByStatus());
+
+        $idclasse = $_SESSION["id"];
+        $_SESSION['Message'] = "Eleve inscrit avec succes !!!";
+        header("Location:" . LINK . "classe/student/$idclasse");
     }
-    public function getStudentByClasse()
+    public function getStudentByClasse($id)
     {
-        $id = $_GET['id'];
         $_SESSION['id'] = $id;
         $eleve = $this->eleveModel->getStudent($id);
         require_once('../vue/lister.html.php');
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

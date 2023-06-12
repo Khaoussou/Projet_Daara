@@ -44,5 +44,9 @@ class ClasseModel
         $requette = "SELECT idNiveau FROM Niveau WHERE nomNiveau LIKE '$level'";
         return $this->database->request($requette);
     }
-
+    public function findClasse($nom)
+    {
+        $requette = "SELECT nomClasse FROM Classe WHERE nomClasse like '$nom'";
+        return $this->database->request($requette);
+    }
 }

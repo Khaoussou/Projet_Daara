@@ -4,34 +4,24 @@ namespace Controller;
 
 class SessionController
 {
-    public function startSession()
+    public static function startSession()
     {
         if (session_status() === PHP_SESSION_DISABLED) {
             session_start();
         }
     }
-    public function sessionUserExist()
+    public static function sessionUserExist()
     {
-        if (!empty($_SESSION['id']) && !empty($_SESSION['login']) && !empty($_SESSION['password'])) {
+        if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
             return true;
         }
         return false;
     }
-    public function destroySession()
+    public static function destroySession()
     {
         if (session_status() === PHP_SESSION_ACTIVE) {
+            session_unset();
             session_destroy();
-            header("Location://htpp:localhost:8080/connect");
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

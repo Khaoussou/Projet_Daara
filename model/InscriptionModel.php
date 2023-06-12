@@ -25,23 +25,8 @@ class InscriptionModel
     }
     public function insertNewStudent($data)
     {
-        $studentData = [$data["idYear"],$data["idClasse"],$data["idStudent"]];
+        $studentData = [$data["idYear"], $data["idClasse"], $data["idStudent"]];
         $requette = "INSERT INTO Inscription (idCurrentYear, idStudentClasse, idStudent) VALUES (?, ?, ?)";
         return $this->database->request($requette, $studentData);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

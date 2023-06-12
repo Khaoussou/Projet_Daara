@@ -29,4 +29,9 @@ class NiveauModel
         $requette = 'INSERT INTO Niveau(idNiveauGroupe, nomNiveau) VALUES(?, ?)';
         return $this->database->request($requette, $dataArray);
     }
+    public function getIdbGroupLevel($level)
+    {
+        $requette = "SELECT idNiveauGroupe FROM Niveau WHERE idNiveau = '$level' ";
+        return $this->database->request($requette);
+    }
 }

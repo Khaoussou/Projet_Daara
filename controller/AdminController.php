@@ -16,7 +16,6 @@ class AdminController
         $results = $this-> adminModel->all();
         require_once('../vue/lister.html.php');
     }
-    
     public function getLastStudent()
     {
         $results = $this-> adminModel->lastInsertStudent();

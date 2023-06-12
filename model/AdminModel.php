@@ -20,7 +20,7 @@ class AdminModel extends PersonneModel
     }
     public function insert($data)
     {
-        $dataArray = [$data['nom'],$data['prenom'],$data['adresse'],$data['type']];
+        $dataArray = [$data['nom'], $data['prenom'], $data['adresse'], $data['type']];
         $requette = 'INSERT INTO Personne(nom, prenom, adresse, type) VALUES(?, ?, ?, ?)';
         return $this->database->request($requette, $dataArray);
     }

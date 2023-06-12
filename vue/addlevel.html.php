@@ -15,27 +15,27 @@
 
     require_once('home.html.php');
 
-        echo '<div class="tableContent">';
-        echo '<table class="table">';
+    echo '<div class="tableContent">';
+    echo '<table class="table">';
 
+    echo '<tr>';
+    echo '<th>idGroupeNiveau</th>';
+    echo '<th>Niveau</th>';
+    echo '<th>Action</th>';
+    echo '</tr>';
+    foreach ($results as $res) {
         echo '<tr>';
-        echo '<th>idGroupeNiveau</th>';
-        echo '<th>Niveau</th>';
-        echo '<th>Action</th>';
-        echo '</tr>';
-        foreach ($results as $res) {
-            echo '<tr>';
-            echo '<td>' . $res['idGroupeNiveau'] . '</td>';
-            echo '<td>' . $res['nomNiveau'] . '</td>';
-            echo '<td>' .
-                '<a href="/classe">
+        echo '<td>' . $res['idGroupeNiveau'] . '</td>';
+        echo '<td>' . $res['nomNiveau'] . '</td>';
+        echo '<td>' .
+            '<a href="/classe">
             <i class="fa-solid fa-circle-info" style="color: #1e3050;"></i>
             </a>' . '</td>';
-            echo '</tr>';
-        }
+        echo '</tr>';
+    }
 
-        echo '</table>';
-        echo '</div>';
+    echo '</table>';
+    echo '</div>';
     ?>
     <div class="modal2 dflex">
         <div class="modal-contenaire dflex fdc">

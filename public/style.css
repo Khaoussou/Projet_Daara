@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,14 +12,15 @@
     background: #eee;
 }
 
-textarea{
+textarea {
     outline: none;
 }
-.login{
+
+.login {
     color: black;
 }
 
-.login:hover{
+.login:hover {
     color: black;
     font-weight: bold;
 }
@@ -28,14 +29,13 @@ textarea{
     height: calc(100% - 73px);
 }
 
-body{
+body {
     font-family: Helvetica;
-    /* background: rgba( 71, 147, 227, 1); */
     width: 100vw;
     height: 100vh;
 }
 
-h2{
+h2 {
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
@@ -44,19 +44,22 @@ h2{
     padding: 30px 0;
 }
 
-.head{
+.head {
     width: 100%;
 }
 
-h1{
-    margin: 10px 70px 70px ;
+h1 {
+    margin: 10px 70px 70px;
+    margin-left: 5%;
     text-transform: uppercase;
+    width: 90%;
 }
-.dflex{
+
+.dflex {
     display: flex;
 }
 
-#Choix{
+#Choix {
     position: absolute;
     top: 7%;
     left: 3.7%;
@@ -64,7 +67,7 @@ h1{
     height: 3%;
 }
 
-.add{
+.add {
     position: absolute;
     top: 25%;
     right: 0;
@@ -76,33 +79,38 @@ h1{
     color: #183153;
 }
 
-.add:hover{
+.add:hover {
     color: #4fc3bf;
 }
 
-.jcc{
+.jcc {
     display: flex;
     justify-content: center;
 }
 
-.aic{
+.aic {
     display: flex;
     align-items: center;
 }
 
-.fdc{
+.fdc {
     display: flex;
     flex-direction: column;
 }
 
-.jcsb{
+.jcsb {
     display: flex;
     justify-content: space-between;
 }
 
-.tableContent{
-    margin: 30px 70px 70px ;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+.tableContent {
+    margin: 30px 70px 70px;
+    box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
+}
+
+.contenaire,
+.hr {
+    margin: 30px 70px 70px;
 }
 
 .table {
@@ -117,7 +125,8 @@ h1{
     background-color: white;
 }
 
-.table td, .table th {
+.table td,
+.table th {
     text-align: center;
     padding: 8px;
 }
@@ -141,10 +150,10 @@ h1{
     background: #F8F8F8;
 }
 
-nav ul{
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+nav ul {
+    box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
     padding: 2%;
-    margin: 50px 70px 70px ;
+    margin: 50px 70px 70px;
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
@@ -152,48 +161,63 @@ nav ul{
     list-style-type: none;
 }
 
-.no-underline, .logout {
+.no-underline,
+.logout {
     text-decoration: none;
     color: #ffffff;
 }
 
-
-/* .add{
-    position: absolute;
-    top: 20%;
-    cursor: pointer;
-} */
-
-.logout{
+.logout {
     cursor: pointer;
     color: #F8F8F8;
 }
 
-.nav:hover, .no-underline:hover, .logout:hover{
+.nav:hover,
+.no-underline:hover,
+.logout:hover {
     color: #4fc3bf;
 }
 
-.jcc{
+.jcc {
     display: flex;
     justify-content: center;
 }
 
-.aic{
+.aic {
     display: flex;
     align-items: center;
 }
 
-.fdc{
+.fdc {
     display: flex;
     flex-direction: column;
 }
 
-.jcsb{
+.jcsb {
     display: flex;
     justify-content: space-between;
 }
 
-.modal, .modal1, .modal2{
+.jcsa {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fw {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    margin: 10px 70px 70px;
+    gap: 5%;
+    width: 55%;
+    line-height: 1.5;
+}
+
+.modal,
+.modal1,
+.modal2 {
     position: absolute;
     top: 0;
     width: 100vw;
@@ -203,12 +227,12 @@ nav ul{
     /* display: none; */
 }
 
-.modal1{
+.modal1 {
     left: -5%;
     width: 110vw;
 }
 
-.modal-contenaire{
+.modal-contenaire {
     background-color: #fff;
     width: 50%;
     border: 2px solid;
@@ -220,68 +244,169 @@ nav ul{
     flex-direction: column;
 }
 
-.modal-header{
+.modal-header {
     height: 20%;
 }
 
-.modal-body{
+.modal-body {
     position: relative;
     height: 80%;
 }
 
-.ajoutNiveau{
+.ajoutNiveau {
     display: none;
 }
 
-span{
+span {
     width: 70%;
     margin: 1%;
     font-size: 1.3rem;
 }
 
-.bouton{
+.bouton {
     gap: 5%;
     cursor: pointer;
 }
 
-.level{
+.level {
     left: 4%;
 }
 
-.form{
+.form {
     position: absolute;
     right: 5.1%;
     top: 27%;
 }
 
-.bout{
+.bout {
     cursor: pointer;
 }
 
-input{
+input {
     outline: none;
 }
 
-h3{
+h3 {
     text-align: center;
     padding: 1%;
 }
 
-img{
+img {
     height: 50px;
     border-radius: 50%;
 }
 
-.year{
+.year {
     background-color: #324960e2;
     color: white;
     width: 15%;
     text-align: center;
     position: absolute;
-    top: -0.5%;
+    top: -.4%;
     left: 50%;
-    transform: translate(-50%,50%);
+    transform: translate(-50%, 50%);
 }
+
+.gest-disc {
+    text-transform: none;
+    /* margin-top: 2%; */
+    line-height: 0.2;
+}
+
+.blocH {
+    width: 90%;
+    height: 30%;
+    margin-top: -3%;
+    padding: 2%;
+    gap: 2%;
+}
+
+.blocG,
+.blocD {
+    width: 50%;
+    line-height: 1.5;
+    font-size: 2.5rem;
+}
+
+select,
+.diss {
+    height: 20rem;
+    font-size: 1rem;
+    padding: 1%;
+    width: 70%;
+}
+
+.type {
+    width: 31%;
+    height: 3rem;
+}
+
+.diss,
+.ok {
+    width: 70%;
+}
+
+.ok {
+    position: absolute;
+    top: 42%;
+    height: 4.5%;
+    width: 5%;
+    right: 15%;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    background-color: #324960e2;
+    border: none;
+    border-radius: 10px;
+}
+
+.modalGroup {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 25%;
+    height: 10%;
+    padding: 2%;
+    background-color: #324960f8;
+    color: White;
+}
+
+.groupModalContenaire {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+#update, .update {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 15%;
+    height: 5%;
+    cursor: pointer;
+    background-color: #324960e2;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+
+.coef {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+.coef td,
+.coef th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
 
 @media (max-width: 450px) {
     .h-custom {

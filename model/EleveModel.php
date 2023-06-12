@@ -24,7 +24,7 @@ class EleveModel extends PersonneModel
         $phone = $data['phone'];
         $type = $data['type'];
         $classe = $data['classe'];
-        $dataArray = [$data['nom'],$data['prenom'],$data['date'],$data['lieu'],$data['numero'],$sexe,$type,$phone,$classe];
+        $dataArray = [$data['nom'], $data['prenom'], $data['date'], $data['lieu'], $data['numero'], $sexe, $type, $phone, $classe];
         $requette = 'INSERT INTO Student(nom, prenom, bornDay, placeDay, numero, sexe, type, phoneNumb, idClasseRoom)
                     VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)';
         return $this->databse->request($requette, $dataArray);
@@ -36,7 +36,7 @@ class EleveModel extends PersonneModel
                     WHERE idClasse = $id";
         return $this->databse->request($requette);
     }
-    public function getIdLastInsertStudent()
+    public function getIdLastInsertid()
     {
         $requette = "SELECT LAST_INSERT_ID()";
         return $this->databse->request($requette);
