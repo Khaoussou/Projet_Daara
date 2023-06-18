@@ -1,3 +1,4 @@
+const url = "http://localhost:8080/";
 const niveau = document.querySelector('#niveau');
 const classe = document.querySelector('#classe');
 const newDiss = document.querySelector('#discipline');
@@ -6,7 +7,6 @@ const gdd = document.querySelector('#gdd');
 const item = document.querySelector('.item');
 const ok = document.querySelector('.ok');
 const update = document.querySelector('#update');
-const updateNote = document.querySelector('.update');
 const groupModalContenaire = document.querySelector('.groupModalContenaire');
 const newGroup = document.querySelector('#new');
 const addGroupe = document.querySelector('#addGroupe');
@@ -62,6 +62,9 @@ async function getData(url) {
     return d;
 }
 
+
+
+
 var dissip
 gdd.addEventListener('change', () => {
     dissip = getValue(gdd);
@@ -69,7 +72,7 @@ gdd.addEventListener('change', () => {
 
 niveau.addEventListener('change', () => {
     let level = getValue(niveau)
-    const donne = getData("http://localhost:8080/classe/" + level)
+    const donne = getData(url + "classe/" + level)
     donne.then(data => {
         chargerSelectClasse(data, classe, 'Selectionner une classe');
     })
@@ -77,7 +80,7 @@ niveau.addEventListener('change', () => {
 
 classe.addEventListener('change', () => {
     let idClasse = getValue(classe)
-    const donne = getData("http://localhost:8080/discip/" + idClasse)
+    const donne = getData(url + "discip/" + idClasse)
     donne.then(data => {
         item.innerHTML = "";
         chargerDissp(data);
@@ -90,7 +93,7 @@ classe.addEventListener('change', () => {
 ok.addEventListener('click', () => {
     let input = newDiss.value
     let idClasse = getValue(classe)
-    fetch("http://localhost:8080/addDiscipline", {
+    fetch(url + "addDiscipline", {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
@@ -102,7 +105,6 @@ ok.addEventListener('click', () => {
         })
     }).then(data => data.json()).then(data => {
         chargerDissp(data);
-        // console.log(data);
     })
 })
 
@@ -111,10 +113,8 @@ update.addEventListener('click', () => {
     inputs.forEach(input => {
         if (input.checked === false) {
             let valueInput = input.value;
-            // console.log(input.value);
             let valueClasse = getValue(classe)
-            // console.log(getValue(classe));
-            fetch("http://localhost:8080/remove", {
+            fetch(url + "remove", {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
@@ -130,30 +130,6 @@ update.addEventListener('click', () => {
     })
 })
 
-// updateNote.addEventListener('click', () => {
-//     const notes = document.querySelectorAll('.note');
-//     notes.forEach(note => {
-//         if (note.value != "") {
-//             let valueInput = note.value;
-//             // console.log(input.value);
-//             let valueClasse = getValue(classe)
-//             // console.log(getValue(classe));
-//             fetch("http://localhost:8080/updateNote", {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-type': 'application/json'
-//                 },
-//                 body: JSON.stringify({
-//                     "idDissip": valueInput,
-//                     "idClasse": valueClasse
-//                 })
-//             }).then(data => data.json()).then(data => {
-//                 chargerDissp(data);
-//             });
-//         }
-//     })
-// })
-
 addGroupe.disabled = true;
 
 newGroup.addEventListener('click', () => {
@@ -165,7 +141,7 @@ group.addEventListener('input', () => {
         addGroupe.disabled = false;
         addGroupe.addEventListener('click', () => {
             let value = group.value
-            fetch("http://localhost:8080/addGroupDiscipline", {
+            fetch(url + "addGroupDiscipline", {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

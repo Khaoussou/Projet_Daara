@@ -100,7 +100,7 @@
                     </span>
                     <span class="dflex jcc bouton">
                         <button class="save" type="submit">Enregistrer</button>
-                        <button class="cancel"> <a href="<?= LINK ?>student/<?= $_SESSION['id'] ?>">Annuler</a> </button>
+                        <button class="cancel"> <a href="<?= LINK ?>classe/student/<?= $_SESSION['id'] ?>">Annuler</a> </button>
                     </span>
                 </form>
             </div>

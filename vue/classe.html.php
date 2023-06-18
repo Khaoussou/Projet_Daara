@@ -36,12 +36,11 @@
                     <td> <?= $res['effectif'] ?> </td>
                     <td>
                         <a href="<?= LINK ?>classe/student/<?= $res["idClasse"] ?>" class="fa-solid fa-circle-info" style="color: #1e3050;"></a>
-                        <a href="<?= LINK ?>discipline/coef/<?= $res["idClasse"] ?>" class="fa-solid fa-arrow-up-from-water-pump" style="color: #1e3050;"></a>
+                        <a href="<?= LINK ?>coef/ponderation/<?= $res["idClasse"] ?>" class="fa-solid fa-arrow-up-from-water-pump" style="color: #1e3050;"></a>
                     </td>
                     
                 </tr>
             <?php } ?>
-
         </table>
     </div>
 </body>

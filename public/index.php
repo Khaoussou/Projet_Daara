@@ -15,6 +15,7 @@ $router->addRoute('GET', '/addstudent', 'Controller\Controller', 'addstudent');
 // $router->addRoute('GET', '/coef', 'Controller\Controller', 'getCoefDissip');
 $router->addRoute('GET', '/lister', 'Controller\EleveController', 'getStudent');
 $router->addRoute('GET', '/classe/student/:id', 'Controller\EleveController', 'getStudentByClasse');
+$router->addRoute('POST', '/classe/note', 'Controller\EleveController', 'getNoteMax');
 $router->addRoute('POST', '/add', 'Controller\EleveController', 'insertStudent');
 $router->addRoute('GET', '/niveau', 'Controller\GroupeNiveauController', 'getLevelGroup');
 $router->addRoute('POST', '/insertlevelGroup', 'Controller\GroupeNiveauController', 'insertLevelGroup');
@@ -35,7 +36,7 @@ $router->addRoute('GET', '/discip/:id', 'Controller\DisciplineController', 'getD
 $router->addRoute('POST', '/addDiscipline', 'Controller\DisciplineController', 'addDiscip');
 $router->addRoute('POST', '/addGroupDiscipline', 'Controller\DisciplineController', 'addGroupDiscip');
 $router->addRoute('POST', '/remove', 'Controller\DisciplineController', 'remove');
-$router->addRoute('GET', '/discipline/coef/:id', 'Controller\CoefController', 'getDissip');
+$router->addRoute('GET', '/coef/ponderation/:id', 'Controller\CoefController', 'getDissip');
 $router->addRoute('GET', '/supp/:id', 'Controller\CoefController', 'delete');
-$router->addRoute('POST', '/updateNote/:id', 'Controller\CoefController', 'update');
+$router->addRoute('POST', '/updateNote', 'Controller\CoefController', 'updateNote');
 $router->treatRequest($_SERVER["REQUEST_METHOD"], $_SERVER['REQUEST_URI']);

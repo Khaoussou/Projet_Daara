@@ -25,6 +25,7 @@ class ClasseController
     }
     public function findClass($id)
     {
+        $_SESSION['idlevelgroup'] = $id;
         $classes = $this->classeModel->getClasseByGroupLevel($id);
         require_once('../vue/classe.html.php');
     }

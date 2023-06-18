@@ -25,7 +25,7 @@ class GroupeNiveauController
     public function insertLevelGroup()
     {
         $nom = $_POST['nomGroupeNiveau'];
-        $save = $_POST['save'];
+        // $save = $_POST['save'];
         $nomExist = $this->groupeLevel->findGroup($nom);
         if (!$nomExist) {
             $this->groupeLevel->insert($nom);

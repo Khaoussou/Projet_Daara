@@ -125,6 +125,19 @@ h1 {
     background-color: white;
 }
 
+.eleve {
+    width: 70%;
+}
+
+.bloc {
+    position: absolute;
+    gap: 2%;
+    left: 5%;
+    width: 50%;
+    font-size: .5rem;
+    cursor: pointer;
+}
+
 .table td,
 .table th {
     text-align: center;
@@ -330,7 +343,7 @@ img {
 
 select,
 .diss {
-    height: 20rem;
+    /* height: 20rem; */
     font-size: 1rem;
     padding: 1%;
     width: 70%;
@@ -380,7 +393,9 @@ select,
     display: none;
 }
 
-#update, .update {
+#save,
+#update,
+.update {
     position: absolute;
     bottom: 10%;
     right: 5%;

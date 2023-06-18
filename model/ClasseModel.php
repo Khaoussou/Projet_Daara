@@ -17,6 +17,10 @@ class ClasseModel
         $this->effectif;
         $this->database = new Database();
     }
+    public function all()
+    {
+        return $this->database->request("SELECT * FROM Classe");
+    }
     public function getClasseByNiveau($idLevel)
     {
         $requette = "SELECT nomClasse, effectif FROM Niveau
@@ -47,6 +51,11 @@ class ClasseModel
     public function findClasse($nom)
     {
         $requette = "SELECT nomClasse FROM Classe WHERE nomClasse like '$nom'";
+        return $this->database->request($requette);
+    }
+    public function getNameById($id)
+    {
+        $requette = "SELECT nomClasse FROM Classe WHERE idClasse like '$id'";
         return $this->database->request($requette);
     }
 }

@@ -12,6 +12,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= LINK ?>style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="<?= LINK ?>script2.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -23,7 +24,11 @@ session_start();
 
     ?>
 
-    <h3>Voici l'ensemble des discipline de cette classe avec leur coef</h3>
+    <h3 style="color: #324960f8; font-size: 2rem">
+    <a style="color: #183153; text-decoration: none;" href="<?= LINK ?>classe/student/<?= $idClasse ?>">
+        <?= $nom ?>
+    </a>
+    </h3>
     <div class="tableContent">
         <table class="table">
 
@@ -37,21 +42,20 @@ session_start();
             <tr>
                 <td><?= $s['libelleDiscipline'] ?></td>
                 <td>
-                    <input type="number" class="note" name="nRess" value="<?= $s['noteRessource'] ?>">
+                    <input type="number" idDissip="<?= $s['idDiscipline'] ?>" class="note nRess" value="<?= $s['Ressource'] ?>">
                 </td>
-                <td>
-                    <input type="number" class="note" name="nExam" value="<?= $s['noteExamen'] ?>">
+                <td class="td">
+                    <input type="number" idDissip="<?= $s['idDiscipline'] ?>" class="note nExam" value="<?= $s['Examen'] ?>">
                 </td>
                 <td>
                     <a href="<?= LINK ?>supp/<?= $s['idDiscipline'] ?>" class="fa-solid fa-trash " style="color: #183153;"></a>
                 </td>
             </tr>
-            <button class="update" style="font-size: 1.5rem">
-            <a href="<?= LINK ?>updateNote/<?= $s['idDiscipline'] ?>" class="no-underline">
-                Mettre à jour
-            </a>
-            </button>
             <?php } ?>
+            <input type="hidden" value="<?= $idClasse ?>" id="current-classe">
+            <button class="update" style="font-size: 1.5rem">
+                Mettre à jour
+            </button>
         </table>
 
     </div>

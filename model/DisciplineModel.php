@@ -60,10 +60,28 @@ class DisciplineModel
         $requette = "SELECT code FROM Discipline WHERE code like ?";
         return $this->database->request($requette, [$code]);
     }
-    public function updateNote($idDissip, $idClasse, $valueR, $valueE)
+    public function updateNote($valueR, $valueE, $idClasse, $idDissip)
     {
-        $data = [$idDissip, $idClasse, $valueR, $valueE];
-        $requette = "UPDATE ClasseDiscip SET noteRessource = ?, noteExamen = ? WHERE idClassDissip = ? AND idDissip = ?";
+        $data = [$valueR, $valueE,  $idClasse, $idDissip];
+        $requette = "UPDATE ClasseDiscip SET Ressource = ?, Examen = ? WHERE idClassDissip = ? AND idDissip = ?";
+        return $this->database->request($requette, $data);
+    }
+    public function getNoteR($idClasse, $idDissip)
+    {
+        $data = [$idClasse, $idDissip];
+        $requette = "SELECT Ressource FROM ClasseDiscip WHERE idClassDissip = ? AND idDissip = ?";
+        return $this->database->request($requette, $data);
+    }
+    public function getNoteE($idClasse, $idDissip)
+    {
+        $data = [$idClasse, $idDissip];
+        $requette = "SELECT Examen FROM ClasseDiscip WHERE idClassDissip = ? AND idDissip = ?";
+        return $this->database->request($requette, $data);
+    }
+    public function getNote($idClasse, $idDissip)
+    {
+        $data = [$idClasse, $idDissip];
+        $requette = "SELECT * FROM ClasseDiscip WHERE idClassDissip = ? AND idDissip = ?";
         return $this->database->request($requette, $data);
     }
 }

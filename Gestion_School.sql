@@ -120,8 +120,18 @@ DELETE FROM `Discipline` WHERE `idDiscipline` = 4;
 DESC Discipline;
 
 UPDATE `ClasseDiscip`
-SET `noteRessource` = NULL, noteExamen = NULL
-WHERE `idClassDissip` = 42 AND `idDissip` = 2;
+SET
+    `noteRessource` = NULL,
+    noteExamen = NULL
+WHERE
+    `idClassDissip` = 42
+    AND `idDissip` = 2;
+
+SELECT `noteExamen`
+FROM `ClasseDiscip`
+WHERE
+    `idClassDissip` = 48
+    AND `idDissip` = 16;
 
 TRUNCATE Discipline;
 
@@ -155,13 +165,18 @@ WHERE `idClassDissip` = 43
 ORDER BY
     `libelleDiscipline` ASC;
 
+SELECT `noteRessource`
+FROM `ClasseDiscip`
+WHERE
+    `idClassDissip` = 43
+    AND `idDissip` = 42;
+
 DESC ClasseDiscip;
 
 DELETE FROM `ClasseDiscip`
 WHERE
     `idClassDissip` = 43
-    AND `idDissip` = 9;
-
+    AND `idDissip` = 9
 CREATE TABLE
     Year (
         idYear int PRIMARY KEY AUTO_INCREMENT,

@@ -31,8 +31,6 @@ class Route
 		foreach ($this->routes as $route) {
 			if ($route["methode"] === $methode) {
 				if ($this->treatUrl($route['chemin'], $chemin)) {
-					// echo $path . '<br/>';
-					// print_r($value);
 					$controller = $route["controller"];
 					$methodeControler = $route["methodeControler"];
 					$var = new $controller();

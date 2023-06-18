@@ -45,7 +45,7 @@
             <button class="ok"> SAVE </button>
         </div>
     </div>
-    <h1 class="gest-disc">Les disciplines de la classe de<span> <a href="<?php LINK ?>discipline/coef/" id="nom" class="no-underline" style="color: #4fc3bf"> </a> </span></h1>
+    <h1 class="gest-disc">Les disciplines de la classe de<span> <a href="<?php LINK ?>coef/ponderation/" id="nom" class="no-underline" style="color: #4fc3bf"> </a> </span></h1>
     <h1 class="gest-disc" style="margin-top: -1%">Decocher une discipline pour la supprimer de la classe</h1>
     <div class="blocBas contenaire">
         <form action="" class="dflex jcc aic item fw">

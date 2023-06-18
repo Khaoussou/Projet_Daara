@@ -100,9 +100,7 @@ class DisciplineController
         if (!$groupe) {
             $this->groupDiscip->insert($nomGroup);
             $group = $this->groupDiscip->findDissipGroup($nomGroup);
-            // print_r($group);
             echo json_encode($group);
-
         }
     }
 }
